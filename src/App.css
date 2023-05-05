@@ -1,0 +1,126 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Gilroy-Light,sans-serif;
+  /* font-family: Gilroy-ExtraBold,sans-serif; */
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /* overflow-y: visible; */
+}
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* box-sizing: border-box; */
+}
+
+.container{
+  border: 1px solid green;
+  max-width: 120rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  /* z-index: 9999; */
+}
+
+h1{
+  font-size: 4.8rem;
+  color: #0e2b5c;
+  font-family: Gilroy-ExtraBold,sans-serif;
+  font-weight: 700;
+
+  }
+h2{
+  font-size: 2rem;
+  color: white;
+  font-family: Gilroy-ExtraBold,sans-serif;
+    letter-spacing: .278em;
+  font-weight: 600;
+}
+
+h3{
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  font-family: Gilroy-ExtraBold,sans-serif;
+}
+h4{
+  font-size: 2.6rem;
+  color: #0e2b5c;
+  font-family: Gilroy-ExtraBold,sans-serif;
+}
+p{
+  font-size: 1.6rem;
+  color: #627792;
+  font-family: Poppins,sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.intro-para{
+  Letter-spacing: .275em
+}
+.grid-two-column{
+    /* display: grid; */
+    display: flex;
+    /* gap: 20rem; */
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+    /* grid-template-columns:repeat(auto auto); */
+}
+.grid-wala-two-column{
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+
+}
+.grid-three-column{
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap: 2rem;
+}
+.grid-four-column{
+  display: grid;
+  grid-template-columns:repeat(4, 1fr);
+}
+  
+
+
+
+/* RESPONSIVE */
+  /* @media (max-width: 768px){ */
+    /* .container{ */
+      /* padding: 0 3.2rem; */
+    /* } */
+  /* } */
+
+  /* for tab  */
+  @media (max-width: 968px){
+    .container{
+      margin: 0 3.2rem;
+    }
+    html{
+    font-size: 57%;
+    }
+    .grid-three-column{
+      grid-template-columns:repeat(2, 1fr);
+    }
+    .grid-four-column{
+      grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+/* for mobile  */
+  @media (max-width: 768px){
+    html{
+        font-size: 50%;
+    }
+    .grid-wala-two-column{
+grid-template-columns:1fr;
+    }
+    .grid-three-column{
+      grid-template-columns:1fr;
+    }
+    .grid-four-column{
+      grid-template-columns:1fr;
+    }
+    
+}
