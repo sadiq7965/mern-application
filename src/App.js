@@ -9,6 +9,9 @@ import SEOAudit from './components/sub-compo/service/SEOAudit';
 import Services from './components/Services';
 import SocialMediaMarketing from './components/sub-compo/service/SocialMediaMarketing';
 import PaidAds from './components/sub-compo/service/PaidAds';
+import Webdevelopment from './components/sub-compo/service/Webdevelopment';
+import Design from './components/sub-compo/service/Design';
+import Content from './components/sub-compo/service/Content';
 
 
 function App() {
@@ -25,6 +28,10 @@ function App() {
   <Route exact path='/service/seoaudit' element={<SEOAudit/>}/>
   <Route exact path='/service/paidads' element={<PaidAds/>}/>
   <Route exact path='/service/socialmediamarketing' element={<SocialMediaMarketing/>}/>
+  <Route exact path='/service/webdevelopment' element={<Webdevelopment/>}/>
+  <Route exact path='/service/design' element={<Design/>}/>
+  <Route exact path='/service/content' element={<Content/>}/>
+
   
 </Routes>
     </div>

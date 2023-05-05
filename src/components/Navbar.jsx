@@ -46,7 +46,7 @@ const Navbar = () => {
     const [Mobile, SetMobile] = useState(false)
     const handleMobile = () => { SetMobile(!Mobile) }
     const [Click, SetClick] = useState(false)
-    const handleClick=()=>{SetClick(!Click)}
+    const handleClick = () => { SetClick(!Click) }
     // document.addEventListener('touchstart',()=>SetClick(!Click))
     console.log(Click)
 
@@ -60,21 +60,21 @@ const Navbar = () => {
                     </li>
                     <div className="dropdown"
 
-                    // onMouseMove={()=>{SetClick(!Click)}}
-                    onMouseEnter={()=>SetClick(!Click)} onMouseLeave={()=>SetClick(!Click)} 
+                        // onMouseMove={()=>{SetClick(!Click)}}
+                        onMouseEnter={() => SetClick(!Click)} onMouseLeave={() => SetClick(!Click)}
 
                     // onTouchStart={()=>SetClick(!Click)}
                     // onTouchMove={()=>SetClick(!Click)}
                     >
-                        <li className='li-on-hover' onClick={()=>{handleClick()}}>
+                        <li className='li-on-hover' onClick={() => { handleClick() }}>
                             <NavLink to='/service'>SERVICE <i class="fa-solid fa-angle-down"></i> </NavLink>
                         </li>
                         {Click && <ul className='hover-ul'>
                             <li>
-                                <NavLink to='/service/seo'   onClick={()=>{handleClick()}} >SEO </NavLink>
+                                <NavLink to='/service/seo' onClick={() => { handleClick() }} >SEO </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/service/socialmediamarketing' onClick={()=>{handleClick()}}>Social Media Marketing</NavLink>
+                                <NavLink to='/service/socialmediamarketing' onClick={() => { handleClick() }}>Social Media Marketing</NavLink>
                             </li>
                             <li>
                                 {/* seo
@@ -83,21 +83,22 @@ const Navbar = () => {
                                     degine
                                     content
                                     paid ads */}
-                                <NavLink to='/service/seoaudit'  onClick={()=>{handleClick()}}> SEO Audit</NavLink>
+                                <NavLink to='/service/seoaudit' onClick={() => { handleClick() }}> SEO Audit</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/service/paidads'  onClick={()=>{handleClick()}}> Paid Ads</NavLink>
+                                <NavLink to='/service/paidads' onClick={() => { handleClick() }}> Paid Ads</NavLink>
 
                             </li>
-                            <li>Core Web Vitals Audit</li>
-                            <li>SEO Consulting</li>
-                            <li>SEO Setup</li>
-                            <li>SEO Copywriting</li>
-                            <li>Content Plan</li>
-                            <li>NavLink Building Audit</li>
-                            <li>WordPress Website Speed Up</li>
-                            <li>SEO Migration Service</li>
-                            <li>Website Indexing Service</li>
+                            <li>
+                                <NavLink to='/service/webdevelopment' onClick={() => { handleClick() }}>Web Development</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/service/design' onClick={() => { handleClick() }}>Design</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/service/content' onClick={() => { handleClick() }}> Content</NavLink>
+                            </li>
+                            
                         </ul>}
 
                     </div>
@@ -112,7 +113,7 @@ const Navbar = () => {
             </div>
             {/* for responsive in mobiel */}
             <div className='mobile'>
-                <i className={(Mobile ? "fa-solid fa-x" : "fa-solid fa-bars")} onClick={() => handleMobile() }></i>
+                <i className={(Mobile ? "fa-solid fa-x" : "fa-solid fa-bars")} onClick={() => handleMobile()}></i>
                 {/* <i class= "fa-solid fa-bars" ></i>
                 <i class="fa-solid fa-x"></i> */}
             </div>

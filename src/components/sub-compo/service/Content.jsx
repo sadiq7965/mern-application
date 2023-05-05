@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import HomeQuote from '../../HomeQuote'
 import Footer from '../../Footer'
 
-const Design = () => {
+const Content = () => {
   return (
 <Wrapper>
     <HomeQuote/>
@@ -12,7 +12,7 @@ const Design = () => {
   )
 }
 
-export default Design
+export default Content
 const Wrapper=styled.section`
 
 `;
