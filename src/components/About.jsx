@@ -9,12 +9,12 @@ const About = () => {
   return (
     
 <Wrapper>
-  <div >
+
     <Intro/>
     <WhatNext/>
     <HomeQuote/>
     <Footer/>
-  </div>
+
 </Wrapper>
   )
 }

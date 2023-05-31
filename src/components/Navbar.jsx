@@ -49,10 +49,10 @@ const Navbar = () => {
     const handleClick = () => { SetClick(!Click) }
     // document.addEventListener('touchstart',()=>SetClick(!Click))
     console.log(Click)
-
+// const body= document.getElementsByTagName('body');
 
     return (
-        <Wrapper>
+        <Wrapper >
             <div>
                 <ul className={Mobile ? 'action' : ''}>
                     <li>
@@ -61,12 +61,13 @@ const Navbar = () => {
                     <div className="dropdown"
 
                         // onMouseMove={()=>{SetClick(!Click)}}
+                        // this code is to where ever we click on dropdown meanu it make services menu options  hidden
                         onMouseEnter={() => SetClick(!Click)} onMouseLeave={() => SetClick(!Click)}
 
-                    // onTouchStart={()=>SetClick(!Click)}
-                    // onTouchMove={()=>SetClick(!Click)}
+                         // onTouchStart={()=>SetClick(!Click)}
+                         // onTouchMove={()=>SetClick(!Click)}
                     >
-                        <li className='li-on-hover' onClick={() => { handleClick() }}>
+                        <li className='li-on-hover' onClick={() => { handleClick() }} >
                             <NavLink to='/service'>SERVICE <i class="fa-solid fa-angle-down"></i> </NavLink>
                         </li>
                         {Click && <ul className='hover-ul'>
@@ -98,12 +99,12 @@ const Navbar = () => {
                             <li>
                                 <NavLink to='/service/content' onClick={() => { handleClick() }}> Content</NavLink>
                             </li>
-                            
+
                         </ul>}
 
                     </div>
                     <li>
-                        <NavLink to='/about'  >ABOUT</NavLink>
+                        <NavLink to='/about' onClick={() => handleMobile()}  >ABOUT</NavLink>
                     </li>
                     <li>
                         <NavLink to='/contact'  >CONTACT</NavLink>
