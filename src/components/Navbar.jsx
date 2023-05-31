@@ -48,26 +48,37 @@ const Navbar = () => {
     const [Click, SetClick] = useState(false)
     const handleClick = () => { SetClick(!Click) }
     // document.addEventListener('touchstart',()=>SetClick(!Click))
-    console.log(Click)
-    // const body= document.getElementsByTagName('body');
 
+    const scrollTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+    const combined = () => {
+        handleMobile();
+        scrollTop();
+    }
+    // let home = document.getElementById('home')
+    // home.addEventListener('click', function () { combined() });
     return (
         <Wrapper >
             <div>
                 <ul className={Mobile ? 'action' : ''}>
-                    <li>
-                        <NavLink to='/' onClick={() => handleMobile()}>HOME</NavLink>
+                    <li id='home'>
+                        <NavLink to='/' onClick={() => { combined() }}  >HOME</NavLink>
                     </li>
                     <div className="dropdown"
 
                         // onMouseMove={()=>{SetClick(!Click)}}
                         // this code is to where ever we click on dropdown meanu it make services menu options  hidden
-                        onMouseEnter={() => SetClick(!Click)} onMouseLeave={() => SetClick(!Click)}
+                        onMouseEnter={() => SetClick(!Click)}
+                        onMouseLeave={() => SetClick(!Click)}
 
-                    // onTouchStart={()=>SetClick(!Click)}
-                    // onTouchMove={()=>SetClick(!Click)}
+                        // on touch start works on mobile click but not in mouse click
+                        onTouchStart={() => SetClick(!Click)}
                     >
-                        <li className='li-on-hover' onClick={() => { handleClick() }} >
+                        <li className='li-on-hover'  >
                             <NavLink to='/service'>SERVICE <i className="fa-solid fa-angle-down"></i> </NavLink>
                         </li>
                         {Click && <ul className='hover-ul'>
@@ -77,6 +88,7 @@ const Navbar = () => {
                             <li>
                                 <NavLink to='/service/socialmediamarketing' onClick={() => { handleClick() }}>Social Media Marketing</NavLink>
                             </li>
+
                             <li>
                                 <NavLink to='/service/paidads' onClick={() => { handleClick() }}> Paid Ads</NavLink>
 
@@ -255,6 +267,7 @@ ul li a.active::after{
     width: 30rem;
     height: 100vh;
     transition: 0.3s ease-in-out;
+    
 }  
 .action{
 right: 0px;

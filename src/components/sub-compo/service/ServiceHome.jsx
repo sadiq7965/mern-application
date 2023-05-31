@@ -8,7 +8,7 @@ import ServiceButton from '../../button/Service_Button'
 
 
 const ServiceHome = () => {
-    const Seo=useNavigate()
+    const nav=useNavigate()
 
   return (
     <Wrapper>
@@ -20,40 +20,40 @@ const ServiceHome = () => {
           </div>
           <div className="service-box grid-three-column" >
             <div className="service-box-inner">
-              <h4>Heading</h4>
+              <h4>SEO</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
-              <ServiceButton onClick={()=>Seo('/service/seo')}>Explore...</ServiceButton>
+              <ServiceButton onClick={()=>nav('/service/seo')}>Explore...</ServiceButton>
               {/* <ServiceButton onClick={()=>Seo('/service/seo')}>Explore...</ServiceButton> */}
             </div>
             <div className="service-box-inner ">
-              <h4>Heading</h4>
+              <h4>Social Media Marketing</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
-              <ServiceButton onClick={()=>Seo('/service/seo')}>Explore...</ServiceButton>
+              <ServiceButton onClick={()=>nav('/service/socialmediamarketing')}>Explore...</ServiceButton>
+            </div>
+            <div className="service-box-inner">
+              <h4>Paid Ads</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
+              <ServiceButton onClick={()=>nav('/service/paidads')}>Explore...</ServiceButton>
+            </div>
+            <div className="service-box-inner">
+              <h4>Web Development</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
+              <ServiceButton onClick={()=>nav('/service/webdevelopment')}>Explore...</ServiceButton>
+            </div>
+            <div className="service-box-inner">
+              <h4>Design</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
+              <ServiceButton onClick={()=>nav('/service/design')}>Explore...</ServiceButton>
+            </div>
+            <div className="service-box-inner">
+              <h4>Content</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
+              <ServiceButton onClick={()=>nav('/service/content')}>Explore...</ServiceButton>
             </div>
             <div className="service-box-inner">
               <h4>Heading</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
-              <ServiceButton onClick={()=>Seo('/service/seo')}>Explore...</ServiceButton>
-            </div>
-            <div className="service-box-inner">
-              <h4>Heading</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
-              <ServiceButton onClick={()=>Seo('/service/seo')}>Explore...</ServiceButton>
-            </div>
-            <div className="service-box-inner">
-              <h4>Heading</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
-              <ServiceButton onClick={()=>Seo('/service/seo')}>Explore...</ServiceButton>
-            </div>
-            <div className="service-box-inner">
-              <h4>Heading</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
-              <ServiceButton onClick={()=>Seo('/service/seo')}>Explore...</ServiceButton>
-            </div>
-            <div className="service-box-inner">
-              <h4>Heading</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab nulla perspiciatis asperiores? Qui eveniet unde cumque aliquam voluptatibus?</p>
-              <ServiceButton onClick={()=>Seo('/service/seo')}>Explore...</ServiceButton>
+              <ServiceButton onClick={()=>nav('#')}>Explore...</ServiceButton>
             </div>
           </div>
           <ButtonWrapper className='service-btn'>Explore</ButtonWrapper>

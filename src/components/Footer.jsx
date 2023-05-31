@@ -13,7 +13,7 @@ const Footer = () => {
         <div className='grid-four-column'>
           <div className="footer-content ">
             <h1>< span className='heading-start'><NavLink to={'/'}>Al</NavLink></span><span className='heading-end'><NavLink to={'/'}>digital</NavLink></span></h1>
-            <p>seoplus+ is an award winning digital marketing agency serving clients globally</p>
+            <p>Aldigital is an award winning digital marketing agency serving clients globally</p>
             <div className="footer-icon">
               <NavLink to={'https://in.linkedin.com/' }target='-_blank' > <i className="fa-brands fa-instagram"></i> </NavLink> 
               <NavLink to={'https://in.linkedin.com/' }target='-_blank' > <FaLinkedin/> </NavLink> 
@@ -123,12 +123,14 @@ p{
   /* text-decoration: underline; */
   padding-top: 2rem;
 }
+.mail-div a{
+text-decoration: none;
+color: #ffffffc5;
+}
 .mail-div .mail,.phone{
   color: #ffffffc5;
   display: flex;
-  /* justify-content: center; */
   align-items: baseline;
-  /* flex-direction: column; */
   gap: .7rem;
   font-size: 1.3rem;
 }
