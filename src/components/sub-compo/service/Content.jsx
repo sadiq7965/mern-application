@@ -6,6 +6,7 @@ import Footer from '../../Footer'
 const Content = () => {
   return (
 <Wrapper>
+  <h1>content</h1>
     <HomeQuote/>
     <Footer/>
 </Wrapper>
@@ -14,5 +15,5 @@ const Content = () => {
 
 export default Content
 const Wrapper=styled.section`
-
+margin-top: 11.8rem;
 `;

@@ -49,7 +49,7 @@ const Navbar = () => {
     const handleClick = () => { SetClick(!Click) }
     // document.addEventListener('touchstart',()=>SetClick(!Click))
     console.log(Click)
-// const body= document.getElementsByTagName('body');
+    // const body= document.getElementsByTagName('body');
 
     return (
         <Wrapper >
@@ -64,11 +64,11 @@ const Navbar = () => {
                         // this code is to where ever we click on dropdown meanu it make services menu options  hidden
                         onMouseEnter={() => SetClick(!Click)} onMouseLeave={() => SetClick(!Click)}
 
-                         // onTouchStart={()=>SetClick(!Click)}
-                         // onTouchMove={()=>SetClick(!Click)}
+                    // onTouchStart={()=>SetClick(!Click)}
+                    // onTouchMove={()=>SetClick(!Click)}
                     >
                         <li className='li-on-hover' onClick={() => { handleClick() }} >
-                            <NavLink to='/service'>SERVICE <i class="fa-solid fa-angle-down"></i> </NavLink>
+                            <NavLink to='/service'>SERVICE <i className="fa-solid fa-angle-down"></i> </NavLink>
                         </li>
                         {Click && <ul className='hover-ul'>
                             <li>
@@ -76,15 +76,6 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <NavLink to='/service/socialmediamarketing' onClick={() => { handleClick() }}>Social Media Marketing</NavLink>
-                            </li>
-                            <li>
-                                {/* seo
-                                    social media marketing
-                                    development(management tools)
-                                    degine
-                                    content
-                                    paid ads */}
-                                <NavLink to='/service/seoaudit' onClick={() => { handleClick() }}> SEO Audit</NavLink>
                             </li>
                             <li>
                                 <NavLink to='/service/paidads' onClick={() => { handleClick() }}> Paid Ads</NavLink>
@@ -205,6 +196,7 @@ ul li a.active::after{
     /* min-width: 220px; */
     /* max-width: 80rem; */
     z-index: 999;
+    transition: 0.3s ease-in-out;
 }
 .li-on-hover i{
     position: sticky;

@@ -1,13 +1,20 @@
 import React from 'react'
+import styled from 'styled-components'
 import Footer from '../../Footer'
+import HomeQuote from '../../HomeQuote'
 
 const SEOAudit = () => {
   return (
-    <div style={{fontSize:'30rem'}}>
-      SEO audit CONTENT HERE
+  <Wrapper>
+        <h1>SEO audit CONTENT HERE</h1>
+        <HomeQuote/>
       <Footer/>
-    </div>
+  </Wrapper>
   )
 }
 
 export default SEOAudit
+const Wrapper = styled.section`
+border: 2px solid red;
+margin-top: 11.8rem;
+`;

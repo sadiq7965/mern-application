@@ -6,6 +6,7 @@ import HomeQuote from '../../HomeQuote'
 const Webdevelopment = () => {
   return (
     <Wrapper>
+      <h1>web development</h1>
         <HomeQuote/>
         <Footer/>
     </Wrapper>
@@ -14,5 +15,5 @@ const Webdevelopment = () => {
 
 export default Webdevelopment
 const Wrapper=styled.section`
-
+margin-top: 11.8rem;
 `;

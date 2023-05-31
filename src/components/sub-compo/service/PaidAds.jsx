@@ -6,6 +6,7 @@ import HomeQuote from '../../HomeQuote'
 const PaidAds = () => {
   return (
     <Wrapper>
+      <h1>paid ads</h1>
         <HomeQuote/>
         <Footer/>
     </Wrapper>
@@ -14,5 +15,5 @@ const PaidAds = () => {
 
 export default PaidAds
 const Wrapper=styled.section`
-
+margin-top: 11.8rem;
 `;
