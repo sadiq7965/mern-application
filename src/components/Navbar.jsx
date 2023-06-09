@@ -66,17 +66,19 @@ const Navbar = () => {
             <div>
                 <ul className={Mobile ? 'action' : ''}>
                     <li id='home'>
-                        <NavLink to='/' onClick={() => { combined() }}  >HOME</NavLink>
+                        <NavLink to='/' onClick={() => { combined()}}  >HOME</NavLink>
                     </li>
                     <div className="dropdown"
 
                         // onMouseMove={()=>{SetClick(!Click)}}
-                        // this code is to where ever we click on dropdown meanu it make services menu options  hidden
+                        // onMouseEnter works likes hover effect 
                         onMouseEnter={() => SetClick(!Click)}
                         onMouseLeave={() => SetClick(!Click)}
+                        // onclik also works on touch in touched device
+                        onClick={()=>SetClick(!Click)}
 
                         // on touch start works on mobile click but not in mouse click
-                        onTouchStart={() => SetClick(!Click)}
+                        // onTouchStart={() => SetClick(!Click)}
                     >
                         <li className='li-on-hover'  >
                             <NavLink to='/service'>SERVICE <i className="fa-solid fa-angle-down"></i> </NavLink>
@@ -107,10 +109,10 @@ const Navbar = () => {
 
                     </div>
                     <li>
-                        <NavLink to='/about' onClick={() => handleMobile()}  >ABOUT</NavLink>
+                        <NavLink to='/about' onClick={() => { combined()}}  >ABOUT</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/contact'  >CONTACT</NavLink>
+                        <NavLink to='/contact' onClick={() => { combined()}} >CONTACT</NavLink>
                     </li>
 
                 </ul>
