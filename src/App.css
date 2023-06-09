@@ -27,7 +27,7 @@ html{
 }
 
 .container{
-  border: 1px solid green;
+  /* border: 1px solid green; */
   max-width: 120rem;
   margin: 0 auto;
   box-sizing: border-box;

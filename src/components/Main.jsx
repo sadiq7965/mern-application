@@ -24,7 +24,7 @@ const Main = (MainObj) => {
 
 export default Main
 const Wrapper = styled.section`
-border: 2px solid red;
+/* border: 2px solid red; */
 padding: 9rem 0;
 width: 100%;
 
@@ -33,7 +33,7 @@ width: 100%;
     align-items: center;
 }
 .intro-data{
-    border: 3px solid yellow;
+    /* border: 3px solid yellow; */
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -97,7 +97,7 @@ export default HomeQuote
 const Wrapper = styled.section`
 
 background-color: white;
-border: 1px solid purple;
+/* border: 1px solid purple; */
 
 .container{
     display: flex;
@@ -117,14 +117,14 @@ h2{
     padding-top: 2rem;
 }
 .form-img{
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     /* max-width: 48%; */
 }
 .form-img img{
     max-width:70%
 }
 .form-box{
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     /* width: 48%; */
     padding: 0 2rem;
     display: flex;

@@ -67,7 +67,7 @@ padding: 9rem 0 0 0;
   gap:3rem
 }
 .footer-content{
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;

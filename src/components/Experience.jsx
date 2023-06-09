@@ -45,7 +45,7 @@ const Experience = () => {
 
 export default Experience
 const Wrapper = styled.section`
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   /* margin-top: 17rem;  */
   padding-top: 17rem; 
   .service-top{
