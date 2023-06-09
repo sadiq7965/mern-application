@@ -4,31 +4,41 @@ import Axios from 'axios';
 
 const HomeQuote = () => {
 
-    const [domain,setDomain] = useState('');
-    const [email,setEmail] = useState('');
-    // const [phone,setPhone] = useState(0);
-    
-// in below function we fetch data and send it to back end but data humne form mein se collect nhi kiya simply input mein se hi collect kiya h 
-// const addFriend = ()=>{
-//             Axios.post('http://localhost:3001/add',{domain:domain,email:email,}).then(()=>{alert('worked successfullly')})
-//             .catch(()=>{alert('not worked')})}
+    const [domain, setDomain] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [checkbox, setCheckbox] = useState(true)
+    // in below function we fetch data and send it to back end but data humne form mein se collect nhi kiya simply input mein se hi collect kiya h 
+    // const addFriend = ()=>{
+    //             Axios.post('http://localhost:3001/add',{domain:domain,email:email,}).then(()=>{alert('worked successfullly')})
+    //             .catch(()=>{alert('not worked')})}
 
 
-// this function is to get data from form we stop default behaviour of form and after summition clear input value of form input
-const handle =(e)=>{
-e.preventDefault();
-    // alert(domain+email)
-    Axios.post('http://127.0.0.1:3001/add',{domain:domain,email:email}).then(()=>{
-        // console.log(response)
-        alert('worked successfully')
-    })
-    .catch(()=>{
-        // console.log(err)
-alert('not worked')
-    })
-       setDomain('');
-       setEmail('') 
-}
+    // this function is to get data from form we stop default behaviour of form and after summition clear input value of form input
+    const handle = (e) => {
+        e.preventDefault();
+
+        //check input fields validation wheater feilds are filled or empty
+        // if (!domain || !email ) {
+        //     alert('Please fill in all the field');
+        //     // ye ruturn handle wale main function ko axios wale function tak jane hi nhi dega ishka yahi se return karne ke liye force kar dega 
+        //     return;
+        // }
+
+        // submit the form 
+        Axios.post('http://127.0.0.1:3001/add', { domain: domain, email: email, phone: phone, checkbox: checkbox }).then(() => {
+            // console.log(response)
+            alert('Form submitted successfully')
+        })
+            .catch(() => {
+                // console.log(err)
+                alert('fail to submitted form ')
+            })
+        // to clear form field 
+        setDomain('');
+        setEmail('');
+        setPhone('')
+    }
 
     return (
         <Wrapper id='service'>
@@ -40,53 +50,63 @@ alert('not worked')
                         <img src="./image/image1.jpg" alt="" />
                     </div>
 
-
-                    {/* <input  className='form-control' type='text' placeholder='Your domain'
-                        onChange={(e)=>setDomain(e.target.value)} />
-                        <input  className='form-control' type='email' placeholder='Email' required
-                       onChange={(e)=>setEmail(e.target.value)} />
-                       <button onClick={addFriend}>click</button> */}
-                       
-
-
-
-
-
-
-
-
-                     {/* input k jo name h ishke according ki post request mein content filed hota h 
-                     name se hi history wala input mein suggestion show karta h
-                     submit ke liye button rakhna h or button ke andar ki onclick function add karna h
-                     in form methord action or form mein hi onsubmit lgane ki zaroorat nhi h
-                     functon mein preventDefault() function bhi hoga or ye complete functionn on click pr button pr hi lga raha hoga
-                     sumbittion ke bad input field ki clear karne ke liye pehle input ki value kuch eshe(value={domain}) 
-                     set ki form input mein and than handle function mein state hook ko empty set kar diya kuch eshe(setDomain('') 
+                    {/* --input k jo name h ishke according ki post request mein content filed hota h 
+                           name se hi history wala input mein suggestion show karta h.
+                           submit ke liye button mein nhi form mein rakhna h or onclick nhi onsubmit rakhna h form 
+                           mein like <form onsubmit={handle}.
+                     --in form methord action or form mein hi onsubmit lgane ki zaroorat nhi padi thi.
+                     functon mein preventDefault() function bhi hoga or ye complete functionn onsubmit pr form pr hi lga raha hoga
+                     --sumbittion ke bad input field ko clear karne ke liye pehle input ki value kuch eshe(value={domain}) 
+                       set ki form input mein and than handle function mein state hook ko empty set kar diya kuch eshe(setDomain('') 
                      */}
                     <form
-                    // to send data we dont need action and method
-                    // action='/add'
-                    // action='/formdata'
-                    //  onSubmit={()=>handle}  
+                        // to send data we dont need action and method
+                        // action='/add'
+                        // action='/formdata'
+                        onSubmit={handle}
                     // method='post'
-                     >
-                    <div  className="form-box">
-                        <input  className='form-control' type='text' name='domain' placeholder='Your domain'
-                       value={domain} onChange={(e)=>setDomain(e.target.value)} />
-                        <input  className='form-control' type='email' name='email' placeholder='Email' required
-                       value={email} onChange={(e)=>setEmail(e.target.value)} />
-                         {/* <input  className='form-control' type='text' placeholder='Phone'
-                        onChange={(e)=>setPhone(e.target.value)} />  */}
-                      <div className='checkbox-div'>
-                      <input style={{marginTop:'3px'}} type='checkbox' name='forcheck' />
-                        <label  htmlFor='forcheck'>I consent to the processing of my personal data by Aldigital Marketing sp z o.o. for marketing purposes</label>
-                      </div>
-                      {/* <input type='submit'className='input-btn'
-                      onClick={()=>{submit()}}
-                      />   */}
-                      <button type='submit' className='input-btn' onClick={handle} >Submit</button>
-                    </div>
-                    </form> 
+
+                    >
+                        <div className="form-box">
+                            <input className='form-control'
+                                type='text'
+                                name='domain'
+                                placeholder='Your domain'
+                                required
+                                value={domain}
+                                onChange={(e) => setDomain(e.target.value)}
+                            />
+                            <input className='form-control'
+                                type='email'
+                                name='email'
+                                placeholder='Email'
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <input className='form-control'
+                                type='text'
+                                name='phone'
+                                placeholder='Phone'
+                                required
+                                value={phone}
+                                onChange={(e) =>
+                                    setPhone(e.target.value)}
+                            />
+                            <div className='checkbox-div'>
+                                <input style={{ marginTop: '3px' }}
+                                    type='checkbox'
+                                    name='forcheck'
+                                    checked
+                                    value={checkbox}
+                                    required
+                                    onChange={(e) => setCheckbox(e.target.checked)}
+                                />
+                                <label htmlFor='forcheck'>I consent to the processing of my personal data by Aldigital Marketing sp z o.o. for marketing purposes</label>
+                            </div>
+                            <button type='submit' className='input-btn'  >Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </Wrapper>
