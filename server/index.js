@@ -1,5 +1,3 @@
-// in this section we fetch data form react front end and save it to mongodb
-// in our ui section i.e react section we didn't use form means humne form mein se data fetch nhi kiya simply input or button bna kar wha se data fetch kiya
 
 const express = require('express');
 const app = express();
@@ -47,42 +45,10 @@ app.post('/add', async (req, res) => {
     }
 
 
-    //     const existingEmail =FriendModel.findOne({ email: email }).then((result) => {
-    //         if (existingEmail) {
-    //             console.log(existingEmail)
-    //             // return res.status(400).json({ message: 'Email already registered' });
-    // return;
-    //         }
-    // else {
-    //     const data1 = new FriendModel({ domain: domain, email: email, phone: phone, checkbox: checkbox })
-    //      data1.save()
-    //         .then(() => {
-    //             // Return a success response
-    //             return res.status(200).json({ message: 'Form uuuuusubmitted successfully' });
-    //         })
-    //         .catch(() => {
-    //             // Handle the error
-    //             return res.status(500).json({ error: 'Internal Server Error' });
-    //         });
-    // }
-    // }).catch((error) => {
-    //     console.error(error);
-    //     return res.status(500).json({ error: 'Internal Server Error' });
-    // })
 
 
     const data1 = new FriendModel({ domain: domain, email: email, phone: phone, checkbox: checkbox })
 
-    // await data1.save()
-    //     .then(() => {
-    //         // Return a success response
-    //         return res.status(200).json({ message: 'Form submitted successfully' });
-    //     })
-    //     .catch((error) => {
-    //         // Handle the error
-    //         console.error(error);
-    //         return res.status(500).json({ error: 'Internal Server Error' });
-    //     });
     try {
         await data1.save();
         return res.status(200).json({ message: 'Form submitted successfully' });
