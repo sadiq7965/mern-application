@@ -1,8 +1,101 @@
+// import React from 'react'
+// import styled from 'styled-components'
+// import { NavLink } from 'react-router-dom'
+
+// const Navbar = () => {
+//   return (
+//     <Wrapper>
+//         <NavList>
+//             <NavItem>  
+//               <NavLink to={"/"}>HOME</NavLink>
+//             </NavItem>
+//             <NavItem className='hover'>
+//             <NavLink to={"/service"}>SERVICES</NavLink>  
+// <DropdownList>
+// <DropdownItem>
+//     SEO111
+// </DropdownItem>
+// <DropdownItem>
+//     SEO
+// </DropdownItem>
+// <DropdownItem>
+//     SEO
+// </DropdownItem>
+// <DropdownItem>
+//     SEO
+// </DropdownItem>
+// <DropdownItem>
+//     SEO
+// </DropdownItem>
+// <DropdownItem>
+//     SEO
+// </DropdownItem>
+// <DropdownItem>
+//     SEO
+// </DropdownItem>
+// </DropdownList>
+//             </NavItem>
+//             <NavItem>
+//             <NavLink to={"/about"}>ABOUT</NavLink>            
+//             </NavItem>
+//             <NavItem>
+//             <NavLink to={"/contact"}>CONTACT</NavLink>            
+//             </NavItem>
+//         </NavList>
+//     </Wrapper>
+//   )
+// }
+
+// export default Navbar
+
+// const Wrapper=styled.section`
+// border:1px solid red;
+// `;
+
+// const NavList=styled.ul`
+//     display: flex;
+//     align-items: center;
+//     gap: 3.8rem;
+// `;
+// const NavItem=styled.li`
+//      list-style: none;
+//    padding: 0.75em 1.5em;
+//    a{
+//     text-decoration: none;
+//     /* font-size: 2rem; */
+//     font-size: 1.6rem;
+//     line-height: 1.5;
+//     /* font-weight: 600; */
+//     /* text-transform: uppercase; */
+//     display: inline-block;
+//     color: #575757;
+//     transition: 0.2s ease-in-out;
+//     position: relative;
+//    }
+
+
+//    .hover{
+//     position: relative;
+//    }
+// `;
+
+// // /* DROPDOWN  */
+// // /* hover on service section  */
+
+// const DropdownList=styled.ul`
+// position: fixed;
+// `;
+// const DropdownItem=styled.li`
+
+// `;
+
+
+
+
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
-
-
 
 const Navbar = () => {
 
@@ -59,8 +152,19 @@ const Navbar = () => {
         handleMobile();
         scrollTop();
     }
+    const MobileClickCombo = () => {
+        handleMobile();
+        handleClick();
+        
+    }
     // let home = document.getElementById('home')
     // home.addEventListener('click', function () { combined() });
+    const toggleDropdown = () => {
+        if (Mobile) {
+          // For touch devices, toggle the dropdown on click
+          SetClick(!Click);
+        }
+      };
     return (
         <Wrapper >
             <div>
@@ -68,12 +172,13 @@ const Navbar = () => {
                     <li id='home'>
                         <NavLink to='/' onClick={() => { combined()}}  >HOME</NavLink>
                     </li>
-                    <div className="dropdown"
+                    <div className="dropdown "
 
                         // onMouseMove={()=>{SetClick(!Click)}}
                         // onMouseEnter works likes hover effect 
-                        onMouseEnter={() => SetClick(!Click)}
-                        onMouseLeave={() => SetClick(!Click)}
+                        // ture and false karne se click karne pr, mouse enter karne pr or mouse leave karne pr jo buge create ho rha tha wo correct ho gya
+                        onMouseEnter={() => SetClick(true)}
+                        onMouseLeave={() => SetClick(false)}
                         // onclik also works on touch in touched device
                         onClick={()=>SetClick(!Click)}
 
@@ -81,32 +186,34 @@ const Navbar = () => {
                         // onTouchStart={() => SetClick(!Click)}
                     >
                         <li className='li-on-hover'  >
-                            <NavLink to='/service'>SERVICE <i className="fa-solid fa-angle-down"></i> </NavLink>
-                        </li>
+                            {/* <NavLink to={""}>  </NavLink> */}
+                            <HashLink> SERVICE <i className="fa-solid fa-angle-down"></i></HashLink>
+                             
+                            </li>
                         {Click && <ul className='hover-ul'>
                             <li>
-                                <NavLink to='/service/seo' onClick={() => { handleClick() }} >SEO </NavLink>
+                                <NavLink to='/service/seo' onClick={() => { MobileClickCombo() }} >SEO </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/service/socialmediamarketing' onClick={() => { handleClick() }}>Social Media Marketing</NavLink>
+                                <NavLink to='/service/socialmediamarketing' onClick={() => { MobileClickCombo() }}>Social Media Marketing</NavLink>
                             </li>
 
                             <li>
-                                <NavLink to='/service/paidads' onClick={() => { handleClick() }}> Paid Ads</NavLink>
+                                <NavLink to='/service/paidads' onClick={() => { MobileClickCombo() }}> Paid Ads</NavLink>
 
                             </li>
                             <li>
-                                <NavLink to='/service/webdevelopment' onClick={() => { handleClick() }}>Web Development</NavLink>
+                                <NavLink to='/service/webdevelopment' onClick={() => { MobileClickCombo() }}>Web Development</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/service/design' onClick={() => { handleClick() }}>Design</NavLink>
+                                <NavLink to='/service/design' onClick={() => { MobileClickCombo() }}>Design</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/service/content' onClick={() => { handleClick() }}> Content</NavLink>
+                                <NavLink to='/service/content' onClick={() => { MobileClickCombo() }}> Content</NavLink>
                             </li>
 
                         </ul>}
-
+                      
                     </div>
                     <li>
                         <NavLink to='/about' onClick={() => { combined()}}  >ABOUT</NavLink>
@@ -155,16 +262,21 @@ ul li a{
     color: #575757;
     transition: 0.2s ease-in-out;
     position: relative;
+    /* z-index: 9999; */
 }
-ul li a:hover,
+
 ul li a.active{
     color: #04bf7e;
 }
+/* ul li a:hover{
+    color: #7d6c6c;
+    font-size: large;
+} */
 /* .active{
     color: #04bf7e;
 } */
 
-ul li a:hover::after,
+/* ul li a:hover::after, */
 ul li a.active::after{
     content: "";
     background-color: #04bf7e;
@@ -180,8 +292,10 @@ ul li a.active::after{
 
 .li-on-hover{
     position: relative;
+    
 }
 .dropdown{
+    /* position: relative; */
     display: inline-block;
 
 }
@@ -189,6 +303,7 @@ ul li a.active::after{
     /* border: 1px solid red; */
     position: fixed;
     /* position: absolute; */
+    /* z-index: 9999; */
     /* overflow: auto; */
     display: flex;
     flex-direction: column;
@@ -209,8 +324,9 @@ ul li a.active::after{
     /* opacity: 0; */
     /* min-width: 220px; */
     /* max-width: 80rem; */
-    z-index: 999;
-    transition: 0.3s ease-in-out;
+    /* z-index: 999; */
+    transition: 0.9s ease-in-out;
+    
 }
 .li-on-hover i{
     position: sticky;
@@ -236,11 +352,7 @@ ul li a.active::after{
 
 
 
-/* responsive mobiel */
-
-.mobile {
-    display: none;
-}
+/* responsive mobile */
 
 .mobile i{
     font-size: 4rem;
@@ -248,7 +360,17 @@ ul li a.active::after{
     color: rgb(87 87 87);
     cursor: pointer;
 }
+.mobile {
+    display: none;
+}
+
 @media (max-width:768px) {
+    .mobile{
+    display: inline-block !important;
+    position: fixed;
+    top: 3.8rem;
+    right: 5rem;
+}
     html{
         font-size: 50%;
     }
@@ -265,21 +387,18 @@ ul li a.active::after{
     background-color: white;
     box-shadow: 0 0 10px 0 rgba(0,0,0,.11)!important;
     top: 11.8rem;
-    right: -30rem;
-    width: 30rem;
-    height: 100vh;
-    transition: 0.3s ease-in-out;
+    /* right: -30rem; */
+    right: -100%;
+    /* width: 30rem; */
+    width: 100%;
+    /* height: 100vh; */
+    transition: 0.5s ease-in-out;
     
 }  
 .action{
 right: 0px;
 }
-.mobile{
-    display: inline-block;
-    position: fixed;
-    top: 3.8rem;
-    right: 5rem;
-}
+
 
 /* service ke inside option  */
 .hover-ul{

@@ -31,9 +31,8 @@ function App() {
   <Route exact path='/service/webdevelopment' element={<Webdevelopment/>}/>
   <Route exact path='/service/design' element={<Design/>}/>
   <Route exact path='/service/content' element={<Content/>}/>
-
-  
 </Routes>
+{/* <Home/> */}
     </div>
   );
 }

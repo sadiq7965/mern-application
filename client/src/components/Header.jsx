@@ -46,11 +46,12 @@ const Wrapper = styled.section`
     justify-content: space-between;
     box-shadow: 0 0 10px 0 rgba(0,0,0,.11)!important;
     z-index: 999;
+    /* position: fixed; */
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 9999;
+   
     background: white;
     /* color: white; */
 }
