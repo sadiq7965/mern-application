@@ -52,7 +52,7 @@ const Wrapper = styled.section`
     right: 0;
     left: 0;
    
-    background:yellowgreen;
+    background: white;
     /* color: white; */
 }
 .header img{
