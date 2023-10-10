@@ -159,12 +159,12 @@ const Navbar = () => {
     }
     // let home = document.getElementById('home')
     // home.addEventListener('click', function () { combined() });
-    const toggleDropdown = () => {
-        if (Mobile) {
-          // For touch devices, toggle the dropdown on click
-          SetClick(!Click);
-        }
-      };
+    // const toggleDropdown = () => {
+    //     if (Mobile) {
+    //       // For touch devices, toggle the dropdown on click
+    //       SetClick(!Click);
+    //     }
+    //   };
     return (
         <Wrapper >
             <div>
